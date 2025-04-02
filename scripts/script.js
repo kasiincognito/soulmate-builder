@@ -15,7 +15,7 @@ setTimeout(function(){
     gender.style.display = "block"
     welcome.style.display = "block"
     welcome2.style.display = "block"
-}, 200)
+}, 1000)
 
 gender.style.height = (window.innerHeight - 51 + "px")
 loading.style.top = ((window.innerHeight / 2) - 51 + "px")
