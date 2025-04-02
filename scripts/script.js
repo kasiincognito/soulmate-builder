@@ -4,14 +4,22 @@ const gender = document.getElementById('gender')
 var welcome = document.getElementById('welcome')
 var welcome2 = document.getElementById('welcome2')
 
+gender.style.display = "none"
+welcome.style.display = "none"
+welcome2.style.display = "none"
+
+
+setTimeout(function(){
+    logo.style.top = (10 + "px")
+    loading.style.display = "none"
+    gender.style.display = "block"
+    welcome.style.display = "block"
+    welcome2.style.display = "block"
+}, 200)
+
 gender.style.height = (window.innerHeight - 51 + "px")
 loading.style.top = ((window.innerHeight / 2) - 51 + "px")
 logo.style.top = ((window.innerHeight / 2) - 180 + "px")
-
-window.addEventListener('load', function(){
-    logo.style.top = (10 + "px")
-    loading.style.display = "none"
-})
 
 
 var content = "Have you ever wondered if there was a website designed to guess the perfect soulmate for you?"
