@@ -7,6 +7,15 @@ button:hover{
     margin-left:3px;
     box-shadow:none;
 }
+input{
+    position:relative;
+    border:1px solid black;
+    margin-top:30px;
+    border-radius:10px;
+    height:30px;
+    width:40px;
+    padding:5px;
+}
 .choices{
     width:100%;
 }
@@ -20,6 +29,13 @@ button{
     height:50px;
     width:200px;
     padding:5px;
+    color:#278983;
+    font-family:"Micro 5", sans-serif;
+    font-weight:60px;
+    font-style: normal;
+    font-size:50px;
+    text-shadow:3px 2px black;
+    font-size:40px;
 }
 .regular{
     margin:0;
