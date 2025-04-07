@@ -56,11 +56,10 @@ setTimeout(function(){
             animate(content[1], welcome2)
             setTimeout(function(){
                 start.style.display = "block"
-            }, 2000)
-        }, 4000)
+            }, 100)
+        }, 100)
     }, 100)
-    
-}, 5000)
+}, 100)
 
 
 gender.style.height = (window.innerHeight - 51 + "px")
@@ -176,6 +175,11 @@ function stages(state, num){
         gender.style.display = "none"
         logo.style.display = "block"
         loading.style.display = "block"
+        setTimeout(function(){
+            gender.style.display = "block"
+            ageinput.style.display = "none"
+            start.style.display = "none"
+        }, 3000)
         if(sex == "male"){
             logo.textContent = "Building her"
         }else{
@@ -183,5 +187,6 @@ function stages(state, num){
         }
         nom = ageinput.value
     }
+
 }
 
