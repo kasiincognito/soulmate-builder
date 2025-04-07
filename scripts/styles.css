@@ -1,6 +1,7 @@
 
 #logo{
     position:absolute;
+    font-family:'AndalusiaScript';
 }
 button:hover{
     margin-top:22px;
@@ -40,6 +41,7 @@ button{
 .regular{
     margin:0;
     font-size:40px;
+    text-shadow:1.5px 1.5px black;
 }
 #gender{
     position:relative;
@@ -64,7 +66,7 @@ h1{
     font-family:"Micro 5", sans-serif;
     font-weight:60px;
     font-style: normal;
-    font-size:50px;
+    font-size:45px;
     text-shadow:3px 2px black;
 }
 #b1{
@@ -160,12 +162,12 @@ div{
     position:absolute;
     margin:5px;
     border-radius:10px;
-    background-color:#dcdfd6;
+    background-color:#ffb2d7;
     border:1px solid black;
 }
 body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background-color:#134340;
+    background-color:#fc44b6;
 }

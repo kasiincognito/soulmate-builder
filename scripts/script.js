@@ -12,6 +12,10 @@ const ageinput = document.getElementById("age")
 const first = document.getElementById('first')
 var numstate = 0
 const buttonnum = 0
+var sex = ""
+var attitude = ""
+var physic = ""
+var nom = ""
 start.textContent = "Get Started"
 
 choice1.style.display = "none"
@@ -31,7 +35,9 @@ var content = [
     "What's your gender?", 
     "Got Yaa!! Sorry but we're kinda homophobic in here. Hahahahaha!!",
     "How do you want her physically?",
-    "How do you want him physically",
+    "How do you want him physically?",
+    "How about her attitude?",
+    "How about his attitude?",
     "How would you name her?",
     "How would you name him?",
 ]
@@ -41,6 +47,7 @@ var content = [
 setTimeout(function(){
     logo.style.top = (10 + "px")
     loading.style.display = "none"
+    logo.style.display = "none"
     gender.style.display = "block"
     
     setTimeout(function(){
@@ -49,11 +56,11 @@ setTimeout(function(){
             animate(content[1], welcome2)
             setTimeout(function(){
                 start.style.display = "block"
-            }, 100)
-        }, 100)
+            }, 2000)
+        }, 4000)
     }, 100)
     
-}, 100)
+}, 5000)
 
 
 gender.style.height = (window.innerHeight - 51 + "px")
@@ -97,6 +104,7 @@ function stages(state, num){
     if(state == 1){
         start.textContent = "next"
         welcome2.style.display = "none"
+        ageinput.value = ""
         ageinput.style.display = "block"
         age = parseInt(ageinput.textContent)
         animate(content[2], welcome)
@@ -111,14 +119,69 @@ function stages(state, num){
         choice2.textContent = "LGBTQI+"
         age = parseInt(ageinput.value)
     }else if(state == 3){
+        start.textContent = "Hot"
+        choice1.textContent = "Middle"
+        choice2.textContent = "Skinny"
         if(num == 1){
-            animate()
-        }else if(num == 3){
+            sex = "male"
+            animate(content[5], welcome)
+        }else if(num == 2){
+            sex = "female"
+            animate(content[6], welcome)
+        }
+        else if(num == 3){
             animate(content[4], welcome)
             start.style.display = "none"
             choice1.style.display = "none"
             choice2.style.display = "none"
         }
+    }else if(state == 4){
+        if(sex == "male"){
+            animate(content[7], welcome)
+        }else{
+            animate(content[8], welcome)
+        }
+        start.textContent = "Savage"
+        choice1.textContent = "Calm"
+        choice2.textContent = "Dirty"
+        if(num == 1){
+            physic = "Hot"
+        }else if(num == 2){
+            physic = "Middle"
+        }
+        else if(num == 3){
+            physic = "Skinny"
+        }
+    }else if(state == 5){
+        ageinput.value = ""
+        ageinput.style.display = "block"
+        start.textContent = "next"
+        choice1.style.display = "none"
+        choice2.style.display = "none"
+        if(sex == "male"){
+            animate(content[9], welcome)
+        }else{
+            animate(content[10], welcome)
+        }
+        
+        if(num == 1){
+            attitude = "Savage"
+        }else if(num == 2){
+            attitude = "Calm"
+        }
+        else if(num == 3){
+            attitude = "Dirty"
+        }
+    }else if(state == 6){
+        gender.style.display = "none"
+        logo.style.display = "block"
+        loading.style.display = "block"
+        if(sex == "male"){
+            logo.textContent = "Building her"
+        }else{
+            logo.textContent = "Building him"
+        }
+        nom = ageinput.value
     }
 }
 
