@@ -59,7 +59,7 @@ setTimeout(function(){
             }, 100)
         }, 100)
     }, 100)
-}, 100)
+}, 5000)
 
 
 gender.style.height = (window.innerHeight - 51 + "px")
