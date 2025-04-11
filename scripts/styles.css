@@ -57,14 +57,17 @@ button{
     width: 115px;
     background-color:#D3E7EE;
 }
+@font-face {
+    font-family: 'High Concept';
+    src: url('HighConcept.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 h1{
     position:relative;
     color:#278983;
     font-size:45px;
     font-family: 'High Concept';
-    src: url('HighConceptRegular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
 #b1{
     width:50px;
@@ -163,5 +166,5 @@ body{
     justify-content:center;
     align-items:center;
     background-color:#7097AB;
-    
+    font-family: 'High Concept', sans-serif;
 }
