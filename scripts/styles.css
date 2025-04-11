@@ -59,7 +59,7 @@ button{
 }
 @font-face {
     font-family: 'High Concept';
-    src: url('HighConcept.ttf') format('truetype');
+    src: url('HighConceptRegular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
