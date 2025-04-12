@@ -57,17 +57,11 @@ button{
     width: 115px;
     background-color:#D3E7EE;
 }
-@font-face {
-    font-family: 'High Concept';
-    src: url('HighConceptRegular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 h1{
     position:relative;
     color:#278983;
     font-size:45px;
-    font-family: 'High Concept';
+    font-family: 'Bubblegum Sans';
 }
 #b1{
     width:50px;

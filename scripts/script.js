@@ -12,9 +12,7 @@ const ageinput = document.getElementById("age")
 const first = document.getElementById('first')
 var numstate = 0
 const buttonnum = 0
-var sex = ""
-var attitude = ""
-var physic = ""
+var character = [0, 0, 0]
 var nom = ""
 start.textContent = "Get Started"
 
@@ -51,7 +49,7 @@ setTimeout(function(){
     gender.style.display = "block"
     
     setTimeout(function(){
-        animate(content[0], welcome) //Je ne sais pas optimiser cette partie, aidez Kasi
+        animate(content[0], welcome)                //Je ne sais pas optimiser cette partie, aidez Kasi
         setTimeout(function(){
             animate(content[1], welcome2)
             setTimeout(function(){
@@ -66,7 +64,7 @@ gender.style.height = (window.innerHeight - 51 + "px")
 loading.style.top = ((window.innerHeight / 2) - 51 + "px")
 logo.style.top = ((window.innerHeight / 2) - 180 + "px")
 
-function animate(insert, out){ //une fonction que j'ai crée pour avoir un effet de ligne de commande sur les textes
+function animate(insert, out){                       //une fonction que j'ai crée pour avoir un effet de ligne de commande sur les textes
     var outList = out.textContent.split("")
     var insertList = insert.split("")
     if(outList.length < insertList.length){
@@ -77,7 +75,7 @@ function animate(insert, out){ //une fonction que j'ai crée pour avoir un effet
     }
 }
 
-start.addEventListener('click', function(){
+start.addEventListener('click', function(){         //Détecteurs évènements boutons
     numstate += 1
     stages(numstate, 1)
 })   
@@ -122,10 +120,9 @@ function stages(state, num){
         choice1.textContent = "Middle"
         choice2.textContent = "Skinny"
         if(num == 1){
-            sex = "male"
             animate(content[5], welcome)
         }else if(num == 2){
-            sex = "female"
+            character[0] = 1
             animate(content[6], welcome)
         }
         else if(num == 3){
@@ -135,7 +132,7 @@ function stages(state, num){
             choice2.style.display = "none"
         }
     }else if(state == 4){
-        if(sex == "male"){
+        if(character[0] == 0){
             animate(content[7], welcome)
         }else{
             animate(content[8], welcome)
@@ -144,12 +141,12 @@ function stages(state, num){
         choice1.textContent = "Calm"
         choice2.textContent = "Dirty"
         if(num == 1){
-            physic = "Hot"
+            character[1] == 0
         }else if(num == 2){
-            physic = "Middle"
+            character[1] == 1
         }
         else if(num == 3){
-            physic = "Skinny"
+            character[1] == 2
         }
     }else if(state == 5){
         ageinput.value = ""
@@ -157,19 +154,19 @@ function stages(state, num){
         start.textContent = "next"
         choice1.style.display = "none"
         choice2.style.display = "none"
-        if(sex == "male"){
+        if(character[0] == 0){
             animate(content[9], welcome)
         }else{
             animate(content[10], welcome)
         }
         
         if(num == 1){
-            attitude = "Savage"
+            character[2] = 0
         }else if(num == 2){
-            attitude = "Calm"
+            character[2] = 1
         }
         else if(num == 3){
-            attitude = "Dirty"
+            character[2] = 2
         }
     }else if(state == 6){
         gender.style.display = "none"
@@ -179,8 +176,9 @@ function stages(state, num){
             gender.style.display = "block"
             ageinput.style.display = "none"
             start.style.display = "none"
+            gen(character)
         }, 3000)
-        if(sex == "male"){
+        if(character[0] == 0){
             logo.textContent = "Building her"
         }else{
             logo.textContent = "Building him"
@@ -188,5 +186,45 @@ function stages(state, num){
         nom = ageinput.value
     }
 
+}
+
+function gen(character){
+    if(character = [0, 0, 0]){         // 1
+
+    }else if(character = [0, 0, 1]){// 2
+        
+    }else if(character = [0, 0, 2]){// 3
+        
+    }else if(character = [0, 1, 0]){// 4
+        
+    }else if(character = [0, 1, 1]){// 5
+        
+    }else if(character = [0, 1, 2]){// 6
+        
+    }else if(character = [0, 2, 0] ){// 7
+        
+    }else if(character = [0, 2, 1] ){// 8
+        
+    }else if(character = [0, 2, 2]){// 9
+        
+    }else if(character = [1, 0, 0]){// 10
+        
+    }else if(character = [1, 0, 1]){// 11
+        
+    }else if(character = [1, 0, 2]){// 12
+        
+    }else if(character = [1, 1, 0]){// 13
+        
+    }else if(character = [1, 1, 1]){// 14
+        
+    }else if(character = [1, 1, 2]){// 15
+        
+    }else if(character = [1, 2, 0]){// 16
+        
+    }else if(character = [1, 2, 1]){// 17
+        
+    }else if(character = [1, 2, 2]){// 18
+        
+    }
 }
 
