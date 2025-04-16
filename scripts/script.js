@@ -20,8 +20,6 @@ start.textContent = "Get Started"
 result.style.display = "none"
 choice1.style.display = "none"
 choice2.style.display = "none"
-choice3.style.display = "none"
-choice4.style.display = "none"
 ageinput.style.display = "none"
 
 gender.style.display = "none"
@@ -56,10 +54,10 @@ setTimeout(function(){
             animate(content[1], welcome2)
             setTimeout(function(){
                 start.style.display = "block"
-            }, 100)
-        }, 100)
+            }, 2000)
+        }, 4000)
     }, 100)
-}, 100)
+}, 4000)
 
 
 gender.style.height = (window.innerHeight - 51 + "px")
@@ -117,6 +115,19 @@ function stages(state, num){
         choice1.textContent = "Female"
         choice2.textContent = "Non-binary"
         age = parseInt(ageinput.value)
+        no()
+        function no(){
+            if(age > 30){
+                alert("Sorry but you're too old, just reload")
+                no()
+            }else if(age < 13){
+                alert("Hey! what are you doing here kiddo? Just reload")
+                no()
+            }else if(age == ""){
+                alert("don't try to fool me bro, that's not even a number!")
+                no()
+            }
+        }
     }else if(state == 3){
         start.textContent = "Hot"
         choice1.textContent = "Middle"
@@ -134,7 +145,7 @@ function stages(state, num){
             choice1.style.display = "none"
             choice2.style.display = "none"
         }
-        alert(character)
+        
     }else if(state == 4){
         if(character[0] == 0){
             animate(content[7], welcome)
@@ -152,7 +163,6 @@ function stages(state, num){
         }else if(num == 3){
             character[1] = 2
         }
-        alert(character)
     }else if(state == 5){
         ageinput.value = ""
         ageinput.style.display = "block"
@@ -173,7 +183,6 @@ function stages(state, num){
         else if(num == 3){
             character[2] = 2
         }
-        alert(character)
     }else if(state == 6){
         gender.style.display = "none"
         logo.style.display = "block"
@@ -182,7 +191,6 @@ function stages(state, num){
             gender.style.display = "block"
             ageinput.style.display = "none"
             start.style.display = "none"
-            animate(nom, welcome)
             gen(character)
         }, 3000)
         if(character[0] == 0){
@@ -196,7 +204,14 @@ function stages(state, num){
 }
 
 function gen(res){
-    alert(res)
+    if(character[0] == 0){
+        age -= 2
+        animate(("Here is " + nom + ", a " + age + " year old girl we built for you"), welcome)
+    }else if(character[0] == 1){
+        age += 2
+        animate(("Here is " + nom + ", a " + age + " year old boy we built for you"), welcome)
+    }
+
     result.style.display = "block"
     if(res[0] == 0 && res[1] == 0 && res[2] == 0){      // 1
         result.src = "assets/100.jpg"
@@ -226,7 +241,7 @@ function gen(res){
         result.src = "assets/010.jpg"
     }else if(res[0] == 1 && res[1] == 1 && res[2] == 1){// 14
         result.src = "assets/011.jpg"
-    }else if(res[0] == 1 && res[1] == 1 && res[2] == 1){// 15
+    }else if(res[0] == 1 && res[1] == 1 && res[2] == 2){// 15
         result.src = "assets/012.jpg"
     }else if(res[0] == 1 && res[1] == 2 && res[2] == 0){// 16
         result.src = "assets/020.jpg"
@@ -236,7 +251,7 @@ function gen(res){
         result.src = "assets/022.jpg"
     }
     else{
-        alert("error")
+        alert("Sorry, you don't have a match")
     }
 }
 

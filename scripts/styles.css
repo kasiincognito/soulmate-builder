@@ -57,6 +57,9 @@ button{
     background-position: center;
     border-radius:10px;
     width:80%;
+    animation-name:result;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
 }
 #container{
     position:absolute;
@@ -168,4 +171,9 @@ body{
     align-items:center;
     background-color:#7097AB;
     font-family: 'High Concept', sans-serif;
+}
+
+@keyframes result {
+    from{opacity:0;}
+    to{opacity:1;}
 }
