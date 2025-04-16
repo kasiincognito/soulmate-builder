@@ -41,7 +41,7 @@ button{
 }
 .regular{
     margin:0;
-    font-size:40px;
+    font-size:30px;
 }
 #gender{
     position:relative;
@@ -50,6 +50,13 @@ button{
     padding:10px;
     flex-direction:column;
     justify-content:center;
+    overflow-y: scroll;
+}
+#result{
+    position:relative;
+    background-position: center;
+    border-radius:10px;
+    width:80%;
 }
 #container{
     position:absolute;
